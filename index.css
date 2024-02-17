@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+    font-family:'Roboto';
+}
+body{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background: #131313;
+
+}
+.maincontener{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    
+}
+.maincontener .card{
+    position: relative;
+    width: 320px;
+    height:450px;
+    overflow:hidden;
+    cursor: pointer;
+    border-radius:20px;
+    background: #232323;
+    margin: 20px;	
+    transition:all 0.6s ease-in;
+    
+    
+
+}
+.maincontener .card::before{
+    content: ' ';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    clip-path: circle(200px at 130% 50%);
+    transition: all 0.5s ease-in;
+
+}
+.maincontener .card:nth-child(1)::before{
+    background: #ac5712;
+}
+.maincontener .card:nth-child(2)::before{
+    background: #2980b9;
+}
+.maincontener .card:nth-child(3)::before{
+    background: #8e44ad;
+}
+.card:hover::before{
+    clip-path:circle(300px at 120% 50%);
+}
+.maincontener .card::after{
+    content:'Rolex';
+    position: absolute;
+    color: rgba(255, 255, 255, 0.04);
+    top: 10%;
+    left:0;
+    font-size:5rem;
+    font-weight:800px;
+    font-style: italic;
+    transform: rotate(-25deg);
+
+}
+/* .card .imBox{ 
+    position: absolute;
+    border: 2px green solid;
+    overflow: hidden;
+    width: 50%;
+    height:50%;
+    left
+
+}*/
+.card{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+    /* border: 2px green solid; */
+    
+
+    
+}
+/* .card>div{
+    border: 2px green solid;
+
+} */
+.card .imBox{
+    width:60%;
+    height:60%;
+    top: 65px;
+    overflow:hidden;
+    /* border: 2px green solid; */
+    position:absolute;
+    transition:all 0.5s ease-in;
+    
+    
+}
+.card .imBox img{
+    width: 80%;
+    height: 80%;
+    position:relative;
+    z-index: index 50;
+    transform: rotate(40deg);
+    top: 20px;
+    left: 12px;
+}
+.card .contentBox{
+    position:absolute;
+    bottom: 8px;
+    width:100%;
+    /* border: 2px green solid; */
+    transition:all 1s ease-in;
+    z-index: 8;
+    
+}
+.card .contentBox .pc{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    
+    z-index:10;
+
+}
+.card .contentBox .pc .color{
+    flex: 9;
+}
+
+.pc>div{
+    /* border: 2px green solid; */
+}
+
+
+.card .contentBox >h3{
+    text-align: center;
+    color: #ffff;
+}
+.card:hover .imBox{
+    top: 0;
+    transform: translateY(0%);
+    
+
+}
+.card:hover .contentBox ,h3{
+    bottom: 60px;
+    transform: translateY(0%);
+}
+.card:nth-child(1) .contentBox .price{
+    background: #ac5712;
+}
+.card:nth-child(2) .contentBox .price{
+    background:#2980b9;
+}
+.card:nth-child(3) .contentBox .price{
+    background: #8e44ad;
+}
+
+
+.card .contentBox .color{
+    display: flex;
+    height: 50px;
+    width: 48%;
+    background: #232323;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+} 
+.card .contentBox .price{
+    width: 50%;
+    height: 50px;
+    padding-left: 2px;
+    
+    
+}
+.card .contentBox .color span{
+    width:20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ac5712;
+    margin-left: 15px;
+    border: none;
+    
+}
+.card .contentBox .color span:nth-child(1){
+    background: #ac5712 ;
+}
+.card .contentBox .color span:nth-child(2){
+    background: #6739e5d7 ;
+}
+.card .contentBox .color span:nth-child(3){
+    background: #d932e8 ;
+}
+.card .contentBox .color span:hover{
+    border: 2px #fff solid;
+}
+
+.card .contentBox .btns{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height: 20px;
+    transition: all 0.6s ease-in;
+    visibility: hidden;
+    opacity: 0;
+    margin: 10px 0;
+    
+
+}
+.card:hover .contentBox .btns{
+    opacity: 1;
+    visibility: visible;
+    box-sizing: boderbox;
+    margin-top: 20px;
+   
+}
+.card .contentBox .btns a{
+    width: 50%;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #ffff;
+    font-weight: 500;
+    outline: none;
+    text-decoration:none;
+    transition: all 0.5s ease-in;
+    
+
+}
+.card:hover:nth-child(1) .contentBox .btns a:nth-child(1){
+    background: #ac5712;
+}
+.card:hover:nth-child(2) .contentBox .btns a:nth-child(1){
+    background: #2980b9;
+}
+.card:hover:nth-child(3) .contentBox .btns a:nth-child(1){
+    background: #8e44ad;
+}
+.card .contentBox .btns a:nth-child(2){
+    background: #232323;
+}
+.card .contentBox .pc:nth-child(2){
+    background: #232323;
+}
+.card:nth-child(1) .contentBox .btns a:hover,
+.card:nth-child(2) .contentBox .btns a:hover,
+.card:nth-child(3) .contentBox .btns a:hover{
+    background: #fff;
+    color: #131313;
+}
+
+
+
+
+
+
+
+
+
